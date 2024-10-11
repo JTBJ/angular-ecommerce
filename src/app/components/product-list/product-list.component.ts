@@ -11,6 +11,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
+  // ==========================================================================================================
+  handleDetails(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
+  tempProduct: any;
+  // =================================================================================================
+  handleAddToCart(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
+  // ==========================================================================================================
   products: Product[] = [];
 
   constructor(private productService: ProductService) {}
