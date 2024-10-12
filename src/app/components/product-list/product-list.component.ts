@@ -7,10 +7,18 @@ import { CommonModule } from '@angular/common';
   selector: 'app-product-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './product-list.component.html',
+  templateUrl: './product-list.componentv2.html',
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
+  // ==========================================================================================================
+  viewDetails(_t13: Product) {
+    throw new Error('Method not implemented.');
+  }
+  // ==========================================================================================================
+  addToCart(_t13: Product) {
+    throw new Error('Method not implemented.');
+  }
   // ==========================================================================================================
   handleDetails(arg0: any) {
     throw new Error('Method not implemented.');

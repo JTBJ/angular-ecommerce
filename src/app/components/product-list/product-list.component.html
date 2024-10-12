@@ -1,33 +1,40 @@
-<table class="table table-hover table-striped">
-  <thead class="table-dark">
-    <tr>
-      <th>Product Name</th>
-      <th>Unit Price</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Actions</th>
-      <th>Specs</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let tempProduct of products">
+<div class="my-margin-top-table-10">
+  <table class="table table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Add to Cart</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tempProduct of products">
         <td class="align-center">
-            <img
+          <img
             class="img-thumbnail"
-              [src]="tempProduct.imageUrl"
-              alt="Product Image"
-              width="50"
-              height="50"
-            />
-          </td>
-      <td class="align-center">{{ tempProduct.name }}</td>
-      <td class="align-center">{{ tempProduct.unitPrice | currency }}</td>
-      <td class="align-center">{{ tempProduct.description }}</td>
-      
-      <td class="align-center">
-        <button (click)="handleAddToCart(tempProduct)">Add to Cart</button>
-      </td>
-      <button (click)="handleDetails(tempProduct)">Details</button>
-    </tr>
-  </tbody>
-</table>
+            [src]="tempProduct.imageUrl"
+            alt="Product Image"
+            width="50"
+            height="50"
+          />
+        </td>
+        <td class="align-center">{{ tempProduct.name }}</td>
+        <td class="align-center">{{ tempProduct.unitPrice | currency }}</td>
+        <td class="align-center">{{ tempProduct.description }}</td>
+        <td class="align-center">
+          <button class="au-btn-submit" (click)="addToCart(tempProduct)">
+            Add to Cart
+          </button>
+        </td>
+        <td class="align-center">
+          <button class="au-btn-submit" (click)="viewDetails(tempProduct)">
+            Details
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
