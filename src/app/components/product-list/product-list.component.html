@@ -1,27 +1,30 @@
-<table class="table">
-  <thead>
+<table class="table table-hover table-striped">
+  <thead class="table-dark">
     <tr>
       <th>Product Name</th>
       <th>Unit Price</th>
       <th>Description</th>
       <th>Image</th>
       <th>Actions</th>
+      <th>Specs</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let tempProduct of products">
-      <td>{{ tempProduct.name }}</td>
-      <td>{{ tempProduct.unitPrice | currency }}</td>
-      <td>{{ tempProduct.description }}</td>
-      <td>
-        <img
-          [src]="tempProduct.imageUrl"
-          alt="Product Image"
-          width="50"
-          height="50"
-        />
-      </td>
-      <td>
+        <td class="align-center">
+            <img
+            class="img-thumbnail"
+              [src]="tempProduct.imageUrl"
+              alt="Product Image"
+              width="50"
+              height="50"
+            />
+          </td>
+      <td class="align-center">{{ tempProduct.name }}</td>
+      <td class="align-center">{{ tempProduct.unitPrice | currency }}</td>
+      <td class="align-center">{{ tempProduct.description }}</td>
+      
+      <td class="align-center">
         <button (click)="handleAddToCart(tempProduct)">Add to Cart</button>
       </td>
       <button (click)="handleDetails(tempProduct)">Details</button>

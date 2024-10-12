@@ -21,13 +21,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "projects/angular-ecommerce/public"
               },
               {
                 "glob": "**/*",
-                "input": "src/assets/*",
-                "output": "/assets/*"
+                "input": "public"
               }
+    
             ],
             "styles": ["src/styles.css"],
             "scripts": []
