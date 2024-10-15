@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Product } from '../common/product';
 
 @Injectable({
@@ -12,17 +12,9 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProductList(): Observable<Product[]> {
-    return this.http.get<GetResponse>(this.baseUrl).pipe(
-      map((response) => response._embedded.products),
-      catchError(this.handleError)
-    );
-  }
-
-  private handleError(error: HttpErrorResponse): Observable<never> {
-    console.error('An error occurred:', error.message);
-    return throwError(
-      () => new Error('Something went wrong; please try again later.')
-    );
+    return this.http
+      .get<GetResponse>(this.baseUrl)
+      .pipe(map((response) => response._embedded.products));
   }
 }
 
